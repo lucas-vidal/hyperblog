@@ -1,0 +1,139 @@
+COMANDOS
+
+~: nos muestra el home
+
+pwd: se ubica en el home de nuestra consola
+
+ls: muestra todos los archivos de el directorio en el que estoy
+
+ls -al: muesta todo los archivos que hay en ese directorio con todos los detalles de archivos
+
+cd "directorio": cambia el directorio
+
+git init: inicia el git en el directorio que estemos situados
+
+git add "archivo": lo agrega al staging
+
+git add .: agrega todo el directorio al stagin
+
+git commit -m "comentario": carga todo el contenido de staging al reposirorio.
+
+git commit -am "comentario": carga el contenido modificado que alguna ves se agrego al staging directamente al respositorio
+
+git log: muestra todos los commits desde el inicio (linea de tiempo)
+
+git log --stat: muestra todos los commit desde el inicio con todas las inserciones y los cambios
+
+git show: muestra el ultimo commit y los contendos de cada archivo
+
+git show --stat: muestra el ultimo commit con todas las insersiones y los cambios
+
+git rm --cached:
+
+git rm --force:
+
+git reset "commit" --soft: vuelve a esea version de commit en el repositorio pero no borra el contendio del staging actual ni del directorio local
+
+git reset "commit" --hard: vuelve a esa version de commit en el repositorio y en el directorio local pero borra todos los registros de commits anteriores y solo queda el ultimo
+
+git diff: diferencia de las lineas que estan diferentes entro los archivos del directorio local y el staging
+
+git diff "commit 1" "commit 2": muestra la diferencia entre dos commit
+
+git clone "url": clona el repositorio remoto en el repositorio local
+
+git push: carga el repositorio local al respositorio remoto
+
+git fetch: carga el repositorio remoto en el repositori local
+
+gir merge: copia los archivos de repositorio local al directorio local
+
+git pull: hace lo mismo que fetch y merge juntos copia de repositori remoto al repositorio local y al directori local
+
+git branch "nombre": crea una rama nueva con ese nombre
+
+git checkout -b "nombre": crea una rama nueva con ese nombre
+
+git checkout "commit" "archivo": copia un archivo en esepecifico de un commit antiguo a la carpeta local
+
+git checkout "rama": cambia de rama
+
+
+GITHUB
+
+git remote add origin "url": se copia el proyecto de GitHub al repositorio y directorio local
+
+git remote: muestra si hay un origin
+
+git remote -v: muestra la url que se configuro el origin
+
+git pull origin master: copia el repositorio remoto al repositorion local
+
+git push origin master: copia mi repositorio local al repositorio remoto
+
+git pull origin master --allow-unrelated-histories: fusiona los commits del repositorio remoto con los commits del repositorio local
+
+
+LLAVES SSH
+
+ssh-keygen -t rsa -b 4096 -C "email": crea la llave ssh en forma local
+
+eval $(ssh-agent -s): enciende el servidor de llaves de la pc
+
+ssh-add ~/.ssh/id_rca: agrega la llave a el servidor 
+
+
+TAGS
+
+
+
+alias nombre="funcion git": crea una alias para ejecutar una funcion
+
+git tag -a "nombre" -m "comentario" "commit corto": crea un tag de algun commit
+
+git tag: muestra los tags
+
+git tag -d "nombre": elimina el tag localmente
+
+git push origin :refs/tags/"tag": elimina el tag en GitHub
+
+git push origin --tag: envia todos los tag locales al servidor remoto
+
+
+RAMAS
+
+git show branch
+
+git show branch --all
+
+gitk: abre una consola windows
+
+git log --all
+
+git log --all --graph: muestra el arbol
+
+git log --all --graph --decorate --oneline: muestra el arbol
+
+
+.gitignore: es un archivo donde se apuntaran un listado de archivos que git va a ingnorar se coloca en la raiz del proyecto
+
+git rebase "rama ": nos ubicamos en la rama que queremos hacer el rebase y luego colocamos la rama que queremos que siga
+
+git stash: guarda una modificacion que hay en el directorio si que este en stage o en el repositorio
+git stash list: muestra el listado de stash guardados
+git stash pop: abre de nuevo la modificacion guardada con stash
+
+git clean: prepara los archivos a borrar
+git clean --dry-run: muestra los archivos a borrar
+git clean -f: confirma la eliminacion de los archivos
+
+git cherry-pick "commit": trae un commit de otra rama cualquiera al head (osea la rama que estamos parados)
+
+git commit --amend: carga una modificacion en el mismo commit anterior para remendarlo
+
+git reflog: se ve todo el historial de los commits (todos) no se borran 
+
+git grep "palabra": busca la palabra en todos los archivos del proyecto
+git grep -n "palabra": busca la palabra en todos los archivos del proyecto y muestra los numeros de lineas
+git grep -c "palabra": numero de veces que se repite esa palabra en el proyecto
+git log -s "palabra": busca la palabra entre los commits
